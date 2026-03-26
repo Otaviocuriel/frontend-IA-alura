@@ -9,52 +9,50 @@
  </head>
   <body>
     <main>
-      <nav class="topbar" aria-label="Navegação principal">
-        <strong class="brand" aria-label="Netflix">NETFLIX</strong>
-        <button class="topbar-button" type="button">Entrar</button>
-      </nav>
+      <div class="theme-switcher" role="group" aria-label="Selecionar tema">
+        <button type="button" class="theme-button is-active" data-theme="dark" aria-label="Dark mode" title="Dark mode">&#127769;</button>
+        <button type="button" class="theme-button" data-theme="light" aria-label="Light mode" title="Light mode">&#9728;</button>
+      </div>
 
       <header>
         <h1>Quem está assistindo?</h1>
-        <p>Escolha um perfil para continuar assistindo seus favoritos.</p>
       </header>
 
       <section aria-label="Seleção de perfis">
         <ul class="profiles">
           <li class="profile">
-            <article>
-              <figure>
-                <img src="/assests/perfil-1.png" alt="Um homem sentado no banco da praça feliz" />
-                <figcaption>Joaquim</figcaption>
-              </figure>
-            </article>
+            <button type="button" class="profile-link" aria-label="Perfil de Otavio">
+              <img src="/assests/perfil-1.png" alt="Foto do perfil Otavio" />
+              <span>Cleudemar</span>
+            </button>
           </li>
 
           <li class="profile">
-            <article>
-              <figure>
-                <img src="/assests/perfil-2.png" alt="Uma mulher sorridente sentada em uma cadeira de praça" />
-                <figcaption>Claude</figcaption>
-              </figure>
-            </article>
-          </li>
-          <li class="profile">
-            <article>
-              <figure>
-                <img src="/assests/perfil-3.jpg" alt="Uma mulher sorridente sentada em uma cadeira de praça" />
-                <figcaption>Leticia</figcaption>
-              </figure>
-            </article>
-          </li>
-          <li class="profile">
-            <article>
-              <figure>
-                <img src="/assests/perfil-4.jpg" alt="Uma mulher sorridente sentada em uma cadeira de praça" />
-                <figcaption>Carlos</figcaption>
-              </figure>
-            </article>
+            <button type="button" class="profile-link" aria-label="Perfil de Giovanna">
+              <img src="/assests/perfil-2.png" alt="Foto do perfil Giovanna" />
+              <span>Beatriz</span>
+            </button>
           </li>
 
+          <li class="profile">
+            <button type="button" class="profile-link" aria-label="Perfil de Big">
+              <img src="/assests/perfil-3.jpg" alt="Foto do perfil Big" />
+              <span>Aurora</span>
+            </button>
+          </li>
+          <li class="profile">
+            <button type="button" class="profile-link" aria-label="Perfil de Big">
+              <img src="/assests/perfil-4.jpg" alt="Foto do perfil Big" />
+              <span>Joaquim</span>
+            </button>
+          </li>
+
+          <li class="profile add-profile">
+            <button type="button" class="profile-link" aria-label="Adicionar perfil">
+              <span class="add-icon" aria-hidden="true">+</span>
+              <span>Adicionar perfil</span>
+            </button>
+          </li>
         </ul>
       </section>
 
@@ -63,5 +61,6 @@
       </footer>
 
     </main>
+    <script src="/script.js"></script>
   </body>
 </html>
