@@ -7,15 +7,32 @@ export function createCard(item) {
         card.classList.add('has-progress');
     }
 
-    const img = document.createElement('img');
-    img.src = item.img;
-    img.alt = `Movie cover`;
-
     const iframe = document.createElement('iframe');
     iframe.frameBorder = "0";
     iframe.allow = "autoplay; encrypted-media";
 
     const videoId = getYouTubeId(item.youtube);
+
+    const img = document.createElement('img');
+    const fallbackPrimary = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+    const fallbackSecondary = `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+    const fallbackFinal = 'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22338%22 viewBox=%220 0 600 338%22%3E%3Crect width=%22600%22 height=%22338%22 fill=%22%23111111%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 fill=%22%23ffffff%22 font-family=%22Arial%22 font-size=%2232%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3ETrailer%3C/text%3E%3C/svg%3E';
+    img.src = item.img || fallbackPrimary;
+    img.alt = item.title ? `Capa de ${item.title}` : 'Capa de conteudo';
+    img.loading = 'lazy';
+    img.referrerPolicy = 'no-referrer';
+    img.onerror = () => {
+        if (img.src !== fallbackPrimary) {
+            img.src = fallbackPrimary;
+            return;
+        }
+        if (img.src !== fallbackSecondary) {
+            img.src = fallbackSecondary;
+            return;
+        }
+        img.onerror = null;
+        img.src = fallbackFinal;
+    };
 
     card.appendChild(iframe);
     card.appendChild(img);
@@ -42,7 +59,7 @@ export function createCard(item) {
             <span class="resolution">HD</span>
         </div>
         <div class="details-tags">
-            <span>Empolgante</span>
+            <span>${item.title || 'Destaque'}</span>
             <span>Animação</span>
             <span>Ficção</span>
         </div>
