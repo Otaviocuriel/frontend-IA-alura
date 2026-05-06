@@ -1,66 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Netflix</title>
-    <link rel="stylesheet" href="styles.css" />
-    
- </head>
+  </head>
   <body>
-    <main>
-      <div class="theme-switcher" role="group" aria-label="Selecionar tema">
-        <button type="button" class="theme-button is-active" data-theme="dark" aria-label="Dark mode" title="Dark mode">&#127769;</button>
-        <button type="button" class="theme-button" data-theme="light" aria-label="Light mode" title="Light mode">&#9728;</button>
-      </div>
-
-      <header>
-        <h1>Quem está assistindo?</h1>
-      </header>
-
-      <section aria-label="Seleção de perfis">
-        <ul class="profiles">
-          <li class="profile">
-            <a class="profile-link" aria-label="Perfil de Claudemar" href="catalogo/catalogo.html">
-              <img src="assests/perfil-1.png" alt="Foto do perfil Claudemar" />
-              <span>Cleudemar</span>
-            </a>
-          </li>
-
-          <li class="profile">
-            <a class="profile-link" aria-label="Perfil de Beatriz" href="catalogo/catalogo.html">
-              <img src="assests/perfil-2.png" alt="Foto do perfil Beatriz" />
-              <span>Beatriz</span>
-            </a>
-          </li>
-
-          <li class="profile">
-            <a class="profile-link" aria-label="Perfil de Aurora" href="catalogo/catalogo.html">
-              <img src="assests/perfil-3.jpg" alt="Foto do perfil Aurora" />
-              <span>Aurora</span>
-            </a>
-          </li>
-          <li class="profile">
-            <a class="profile-link" aria-label="Perfil de Joaquim" href="catalogo/catalogo.html">
-              <img src="assests/perfil-4.jpg" alt="Foto do perfil Joaquim" />
-              <span>Joaquim</span>
-            </a>
-          </li>
-
-          <li class="profile add-profile">
-            <a class="profile-link" aria-label="Adicionar perfil" href="#adicionar-perfil">
-              <span class="add-icon" aria-hidden="true">+</span>
-              <span>Adicionar perfil</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <footer>
-        <button class="manage-button" type="button">Gerenciar perfis</button>
-      </footer>
-
-    </main>
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
