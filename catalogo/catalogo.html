@@ -1,80 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Clone</title>
-    <link rel="stylesheet" href="catalogo.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="catalogo.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-    <!-- Navbar -->
-    <header class="navbar" id="navbar">
-        <div class="navbar-left">
-            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-                alt="Netflix">
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="https://www.alura.com.br/" class="active">Início</a></li>
-                    <li><a href="https://www.alura.com.br/">Séries</a></li>
-                    <li><a href="https://www.alura.com.br/">Filmes</a></li>
-                    <li><a href="https://www.alura.com.br/">Jogos</a></li>
-                    <li><a href="https://www.alura.com.br/">Bombando</a></li>
-                    <li><a href="https://www.alura.com.br/">Minha lista</a></li>
-                    <li><a href="https://www.alura.com.br/">Melhores da Alura</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="navbar-right">
-            <i class="fas fa-search icon"></i>
-            <a href="../index.html" class="kids-link">Seu nome</a>
-            <div class="nav-notification">
-                <i class="fas fa-bell icon"></i>
-                <span class="notification-badge">42</span>
-            </div>
-            <a href="../index.html" class="profile-menu" style="text-decoration: none; color: inherit;">
-                <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-                    alt="Profile">
-                <i class="fas fa-caret-down icon" style="font-size: 14px; margin-left: 5px;"></i>
-            </a>
-        </div>
-    </header>
+  <div class="loading-screen" id="loading-screen">
+    <div class="loading-logo">NETFLIX</div>
+    <div class="loading-bar"><span></span></div>
+  </div>
 
-    <!-- Sliders Container -->
-    <main class="sliders-container" id="main-content">
-        <!-- Javascript will inject the rows here -->
-    </main>
+  <header class="navbar" id="navbar">
+    <div class="navbar-left">
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#series">Séries</a></li>
+          <li><a href="#filmes">Filmes</a></li>
+          <li><a href="#top10">Top 10</a></li>
+          <li><a href="#minha-lista">Minha lista</a></li>
+          <li><a href="#continuar">Continuar assistindo</a></li>
+        </ul>
+      </nav>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <a href="https://www.alura.com.br/" target="_blank">
-                <p>Imersão Alura AI</p>
-            </a>
-            <ul class="footer-links">
-                <li><a href="https://www.alura.com.br/" target="_blank">Perguntas frequentes</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Centro de ajuda</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Conta</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Imprensa</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Relações com investidores</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Carreiras</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Formas de assistir</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Termos de uso</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Privacidade</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Preferências de cookies</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Informações corporativas</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Entre em contato</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Teste de velocidade</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Avisos legais</a></li>
-                <li><a href="https://www.alura.com.br/" target="_blank">Só na Netflix</a></li>
-            </ul>
+    <div class="navbar-right">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input id="search-input" type="search" placeholder="Buscar filmes e séries" />
+      </div>
+      <a href="../index.html" class="kids-link">Seu nome</a>
+      <div class="nav-notification">
+        <i class="fas fa-bell icon"></i>
+        <span class="notification-badge">9</span>
+      </div>
+      <a href="../index.html" class="profile-menu">
+        <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Perfil" />
+        <i class="fas fa-caret-down icon small"></i>
+      </a>
+    </div>
+  </header>
+
+  <aside class="mobile-sidebar" id="mobile-sidebar">
+    <button class="close-sidebar" id="close-sidebar" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+    <a href="#inicio">Início</a>
+    <a href="#series">Séries</a>
+    <a href="#filmes">Filmes</a>
+    <a href="#top10">Top 10</a>
+    <a href="#minha-lista">Minha lista</a>
+    <a href="#continuar">Continuar assistindo</a>
+  </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-label">TOP 1 NO BRASIL HOJE</span>
+      <h1 id="hero-title">Stranger Things</h1>
+      <p id="hero-description">Mistério, aventura e amizade em uma produção com clima cinematográfico e visual intenso.</p>
+      <div class="hero-actions">
+        <button class="btn primary" id="hero-play"><i class="fas fa-play"></i> Assistir</button>
+        <button class="btn secondary" id="hero-info"><i class="fas fa-info-circle"></i> Mais informações</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="sliders-container" id="main-content"></main>
+
+  <section class="empty-search" id="empty-search" hidden>
+    <h2>Nenhum título encontrado</h2>
+    <p>Tente buscar por outro nome, gênero ou categoria.</p>
+  </section>
+
+  <div class="details-modal" id="details-modal" aria-hidden="true">
+    <div class="details-card">
+      <button class="modal-close" id="modal-close" aria-label="Fechar"><i class="fas fa-times"></i></button>
+      <div class="modal-backdrop" id="modal-backdrop-img"></div>
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <div class="modal-meta" id="modal-meta"></div>
+        <div class="modal-actions">
+          <button class="btn primary" id="modal-play"><i class="fas fa-play"></i> Assistir</button>
+          <button class="btn circle" id="modal-list"><i class="fas fa-plus"></i></button>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
 
-    <script type="module" src="js/main.js"></script>
+  <div class="fake-player" id="fake-player" aria-hidden="true">
+    <button class="player-close" id="player-close"><i class="fas fa-arrow-left"></i></button>
+    <iframe id="player-frame" title="Player fake" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="player-ui">
+      <div class="player-progress"><span id="player-progress-value"></span></div>
+      <div class="player-controls">
+        <button><i class="fas fa-play"></i></button>
+        <button><i class="fas fa-volume-up"></i></button>
+        <strong id="player-title">Título</strong>
+        <span>HD</span>
+        <button><i class="fas fa-expand"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="ui-sound" preload="auto" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA="></audio>
+
+  <footer>
+    <div class="footer-content">
+      <p>Clone visual inspirado em streaming para fins de estudo.</p>
+      <ul class="footer-links">
+        <li><a href="#">Perguntas frequentes</a></li>
+        <li><a href="#">Centro de ajuda</a></li>
+        <li><a href="#">Conta</a></li>
+        <li><a href="#">Privacidade</a></li>
+        <li><a href="#">Termos de uso</a></li>
+        <li><a href="#">Preferências de cookies</a></li>
+        <li><a href="#">Informações corporativas</a></li>
+        <li><a href="#">Entre em contato</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
